@@ -1,0 +1,45 @@
+
+  <h2>Калькулятор расчета цены авиабилета</h2>
+
+  <br>
+
+  <label for="km">Количество километров, км</label>
+  <input type="text" id="km"    [(ngModel)]=    "km">
+
+  <br>
+
+  <label for="age">Возраст, лет</label>
+  <input type="text" id="age"   [(ngModel)]=   "age">
+
+  <br>
+
+  <label for="weigh">Вес, кг</label>
+  <input type="text" id="weigh" [(ngModel)]="weight">
+
+  <br>
+
+  <button (click)="callculate($event)">Расчитать</button>
+
+  <h3>Предложения</h3>
+
+  <h4>Аэрофлот</h4>
+
+  <p *ngIf="price_aero_econom != 'Недоступно'">
+    Эконом:      {{ this.price_aero_econom   | currency: 'RUB':'symbol-narrow' }}</p>
+
+  <p *ngIf="price_aero_improved != 'Недоступно'">
+    Продвинутый: {{ this.price_aero_improved | currency: 'RUB':'symbol-narrow' }}</p>
+
+  <p *ngIf="price_aero_luxuary != 'Недоступно'">
+    Люкс:        {{ this.price_aero_luxuary  | currency: 'RUB':'symbol-narrow' }}</p>
+
+  <h4>РЖД</h4>
+
+  <p *ngIf="price_gd_econom != 'Недоступно'">
+    Эконом:      {{ this.price_gd_econom     | currency: 'RUB':'symbol-narrow' }}</p>
+
+  <p *ngIf="price_gd_improved != 'Недоступно'">
+    Продвинутый  {{ this.price_gd_improved   | currency: 'RUB':'symbol-narrow' }}</p>
+
+  <p *ngIf="price_gd_luxiary != 'Недоступно'">
+    Люкс         {{ this.price_gd_luxiary    | currency: 'RUB':'symbol-narrow' }}</p>
